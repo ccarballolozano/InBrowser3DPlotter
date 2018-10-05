@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='js/functions.js'></script>
+    <meta charset="UTF-8">
+    <title>Online 3D plotter</title>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="jumbotron jumbotron-fluid mb-4 mt-2">
+        <div class="container">
+            <h1 class="display-4">Online 3D plotter</h1>
+            <p class="lead">Draw a 3D Scatter plot directly from a csv file in your browser.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h5>Select csv file:</h5>
+    <div class="row">
+        <div class="col">
+            <form>
+                <div class="form-group">
+                    <input type="file" id="fileInput">
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="hasHeaders" name="hasHeaders" value="headers">
+                    <label for="hasHeaders">Headers?</label>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="uploadButton" name="upload">Go</button>
+                </div>
+            </form>
+        </div>
+        <div class="col">
+            <div class="card" style="overflow-y: scroll; height: 200px">
+                <div class="card-body" id="inputDisplayScroll">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- SELECT VARIABLES TO PLOT-->
+    <h5>Select variables to plot:</h5>
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="select-xaxis-var">Select X axis variable</label>
+                <select class="custom-select" id="select-xaxis-var"> // <!--<select class="custom-select custom-select-lg mb-3">-->
+                    <!--<option selected>X axis</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>-->
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="select-yaxis-var">Select Y axis variable</label>
+                <select class="custom-select" id="select-yaxis-var">
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label for="select-zaxis-var">Select Z axis variables</label>
+                <select class="custom-select" id="select-zaxis-var" size="4" multiple>
+                    </select>
+            </div>
+            <div class="form-group col">
+                <label for="select-zaxis-var">Select variable to seggregate</label>
+                <select class="custom-select" id="select-groupby-var">
+                </select>
+            </div>
+        </div>
+    </form>
+
+    <button type="button" class="btn btn-primary" id="plotScatter3DButton">Plot Scatter</button>
+    <!-- <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-primary" id="plotScatter3DButton">Plot Scatter</button>
+        </div>
+        TODO: available surfaces
+        <div class="col">
+            <button type="button" id="plotSurface3DButton">Plot Surface</button>
+        </div>
+
+    </div>-->
+
+    <hr>
+
+    <div id="displayArea" style="width: 100%; height: 500px"></div>
+</div>
+
+</body>
+<footer>
+
+</footer>
+</html>
