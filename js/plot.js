@@ -1,4 +1,4 @@
-function plotScatter3D(data, xName, yName, zNameArray, groupName, containerId) {
+function plotScatter3D(data, xName, yName, zNameArray, groupName, plotConfig, containerId) {
     let traces = [];  // array to hold every data trace
     let colorList = Plotly.d3.scale.category10();  // default color list (one for each label)
     // Colorlist gives function style, i.e., colorList(k) gives the k-th color, an array is enough
@@ -34,12 +34,14 @@ function plotScatter3D(data, xName, yName, zNameArray, groupName, containerId) {
             marker: {
                 color: color,
                 symbol: symbol,
+                size: plotConfig['markerSize'],
+                opacity: plotConfig['markerOpacity'],
                 line: {
                     color: 'black',
-                    //width: 3
+                    width: plotConfig['markerLineWidth']
                 }
             },
-            opacity: 0.7,
+
         };
         return trace;
     }

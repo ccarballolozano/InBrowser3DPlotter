@@ -36,18 +36,19 @@
                     <input type="checkbox" id="hasHeaders" name="hasHeaders" value="headers">
                     <label for="hasHeaders">Headers?</label>
                 </div>
+                <progress id="loadProgress" value="0"></progress>
                 <div class="form-group">
                     <button type="button" class="btn btn-primary" id="uploadButton" name="upload">Go</button>
                 </div>
             </form>
         </div>
-        <div class="col">
+        <!--<div class="col">
             <div class="card" style="overflow-y: scroll; height: 200px">
                 <div class="card-body" id="inputDisplayScroll">
 
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
     <hr>
@@ -86,21 +87,39 @@
         </div>
     </form>
 
-    <button type="button" class="btn btn-primary" id="plotScatter3DButton">Plot Scatter</button>
-    <!-- <div class="row">
-        <div class="col">
-            <button type="button" class="btn btn-primary" id="plotScatter3DButton">Plot Scatter</button>
-        </div>
-        TODO: available surfaces
-        <div class="col">
-            <button type="button" id="plotSurface3DButton">Plot Surface</button>
-        </div>
+    <hr>
 
-    </div>-->
+    <!-- ADD STYLE -->
+    <h5>Configure plotting style:</h5>
+
+    <form>
+        <div class="form-row">
+            <div class="col-xs-1">
+                <label for="select-marker-size">Marker size: </label>
+                <input class="form-control" type="number" value="12" id="select-marker-size">
+            </div>
+            <div class="col-xs-1">
+                <label for="select-marker-size">Opacity (0-1): </label>
+                <input class="form-control" type="number" value="0.8" step=".05" id="select-marker-opacity">
+            </div>
+            <div class="col-xs-1">
+                <label for="select-marker-size">Line width: </label>
+                <input class="form-control" type="number" value="1" id="select-marker-line-width">
+            </div>
+        </div>
+    </form>
+
+    <hr>
+
+    <!-- PLOT BUTTON -->
+    <button type="button" class="btn btn-primary" id="plotScatter3DButton">Plot Scatter</button>
 
     <hr>
 
     <div id="displayArea" style="width: 100%; height: 500px"></div>
+
+    <hr>
+
 </div>
 
 </body>
