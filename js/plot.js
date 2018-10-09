@@ -23,7 +23,7 @@ function plotScatter3D(data, xName, yName, zNameArray, groupName, plotConfig, co
 
     let symbolList = getSymbolList();
 
-    function createDataTrace(x, y, z, name, color, symbol) {
+    function createDataTrace(x, y, z, name, color, symbol, plotConfig) {
         let trace = {
             x: x,
             y: y,
@@ -35,11 +35,11 @@ function plotScatter3D(data, xName, yName, zNameArray, groupName, plotConfig, co
                 color: color,
                 symbol: symbol,
                 size: plotConfig['markerSize'],
-                opacity: plotConfig['markerOpacity'],
                 line: {
-                    color: 'black',
+                    color: 'rgb(0, 0, 0)',
                     width: plotConfig['markerLineWidth']
-                }
+                },
+            opacity: plotConfig['markerOpacity'],
             },
 
         };
@@ -56,7 +56,8 @@ function plotScatter3D(data, xName, yName, zNameArray, groupName, plotConfig, co
                     data.map((val) => val[zNameArray[i]]),
                     zNameArray[i],
                     colorList[0],
-                    symbolList[i]
+                    symbolList[i],
+                    plotConfig
                 )
             );
         }
@@ -73,7 +74,8 @@ function plotScatter3D(data, xName, yName, zNameArray, groupName, plotConfig, co
                         filteredData.map((val) => val[zNameArray[i]]),
                         zNameArray[i] + ' (' + groupName + '=' + groupByUnique[j] + ')',
                         colorList[j],
-                        symbolList[i]
+                        symbolList[i],
+                        plotConfig
                     )
                 );
             }
@@ -86,9 +88,8 @@ function plotScatter3D(data, xName, yName, zNameArray, groupName, plotConfig, co
             },
             yaxis: {
                 title: yName,
-            },
+            }
         }
     };
-    //document.getElementById(containerId).setAttribute("style", "width:100%");
     Plotly.newPlot(containerId, traces, layout, {responsive: true});
 }

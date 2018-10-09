@@ -32,23 +32,16 @@
                 <div class="form-group">
                     <input type="file" id="fileInput">
                 </div>
+                <progress id="loadProgress" value="0"></progress>
                 <div class="form-group">
                     <input type="checkbox" id="hasHeaders" name="hasHeaders" value="headers">
                     <label for="hasHeaders">Headers?</label>
                 </div>
-                <progress id="loadProgress" value="0"></progress>
                 <div class="form-group">
                     <button type="button" class="btn btn-primary" id="uploadButton" name="upload">Go</button>
                 </div>
             </form>
         </div>
-        <!--<div class="col">
-            <div class="card" style="overflow-y: scroll; height: 200px">
-                <div class="card-body" id="inputDisplayScroll">
-
-                </div>
-            </div>
-        </div>-->
     </div>
 
     <hr>
@@ -116,14 +109,14 @@
 
     <hr>
 
-    <div id="displayArea" style="width: 100%; height: 500px"></div>
+    <div id="displayArea"></div>
 
     <hr>
+    <div id="trial">
 
+    </div>
 </div>
 
 </body>
-<footer>
 
-</footer>
 </html>

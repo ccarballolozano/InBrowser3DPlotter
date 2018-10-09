@@ -63,10 +63,14 @@ window.onload = function() {
 
     plotScatter3DButton.addEventListener('click', function(evt) {
 
+        function clearDiv(containerId) {
+            document.getElementById(containerId).innerHTML = "";
+        }
+
         function get_plot_config() {
-            return {'markerSize': document.getElementById('select-marker-size').value,
-            'markerOpacity': document.getElementById('select-marker-opacity').value,
-            'markerLineWidth': document.getElementById('select-marker-line-width').value
+            return {'markerSize': +document.getElementById('select-marker-size').value,
+            'markerOpacity': +document.getElementById('select-marker-opacity').value,
+            'markerLineWidth': +document.getElementById('select-marker-line-width').value
             };
         }
 
@@ -78,6 +82,7 @@ window.onload = function() {
         let zVarNames = Array.from(selectedNodeList).map((elem, idx) => elem.value);
         let groupByVarName = document.getElementById('select-groupby-var').value;
         if (groupByVarName === 'None') groupByVarName = false;
+
         plotScatter3D(data, xVarName, yVarName, zVarNames, groupByVarName, plotConfig, 'displayArea');
     });
 };
