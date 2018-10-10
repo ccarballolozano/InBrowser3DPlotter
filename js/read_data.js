@@ -26,7 +26,8 @@ function parse_text(text, elemDelimiter, lineDelimiter, hasHeader) {
         if ("" !== lines[currentLine]) {
             line = lines[currentLine].split(elemDelimiter);
             for (let j = 0; j < nVars; j++) {
-                elemParsed[varNames[j]] = line[j].replace(/"/g, "");
+                elemParsed[varNames[j]] = line[j].replace(/"/g, "").replace(/\s/g,"");
+                // deleted extra quotes and possible spaces left
             }
             dataParsed.push(elemParsed);
         }
