@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
     <!-- Functions created -->
     <script type='text/javascript' src='js/read_data.js'></script>
     <script type="text/javascript" src="js/plot.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <meta charset="UTF-8">
+
     <title>In browser 3D plotter</title>
 </head>
 
 <body>
 
-<div class="container-fluid">
+<div class="container">
     <div class="jumbotron jumbotron-fluid mb-4 mt-2">
         <div class="container">
+
             <h1 class="display-4">Online 3D plotter</h1>
-            <p class="lead">Draw a 3D Scatter plot directly from a csv file in your browser.</p>
+            <p class="lead">Draw a 3D Scatter Plot from a csv file directly in your browser.</p>
+
+            <div class="row">
+                <div class="col-auto">
+                    <a href="https://github.com/ccarballolozano" style="color: inherit; text-decoration: inherit;">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="mailto:ccarballolozano@gmail.com" style="color: inherit; text-decoration: inherit;">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="https://ccarballolozano.github.io/" style="color: inherit; text-decoration: inherit;">
+                        <i class="fas fa-user-circle fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -112,9 +136,20 @@
     <div id="displayArea"></div>
 
     <hr>
-    <div id="trial">
-
-    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+            Making use of:
+            </div>
+            <div class="row">
+                <p>
+                <a href="https://plot.ly/javascript/"> Plotly.js</a>,
+                <a href="http://getbootstrap.com/">Bootstrap</a>,
+                <a href="https://fontawesome.com/">Font Awesome</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
 </div>
 
 </body>
