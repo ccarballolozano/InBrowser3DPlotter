@@ -35,11 +35,11 @@ function plotScatter3D(data, xName, yName, zNameArray, groupName, plotConfig, co
                 color: color,
                 symbol: symbol,
                 size: plotConfig['markerSize'],
+                opacity: plotConfig['markerOpacity'],
                 line: {
                     color: 'rgb(0, 0, 0)',
                     width: plotConfig['markerLineWidth']
                 },
-            opacity: plotConfig['markerOpacity'],
             },
 
         };
