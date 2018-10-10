@@ -43,10 +43,20 @@ window.onload = function() {
                 createOption(containerId, optionIds[i], optionNames[i]);
             }
         }
+        // Clear all options of a container
+        function removeEveryChild(containerId) {
+            let node = document.getElementById(containerId);
+            while (node.firstChild) {
+                node.removeChild(node.firstChild);
+            }
+        }
 
         let hasHeadersBool = document.getElementById("hasHeaders").checked;
         data = parse_text(reader.result, ',', '\n', hasHeadersBool);
-        //createCheckboxes(varNames, "featuresCheckboxDiv");
+        // Remove every child (options) from possible previous loadings
+        removeEveryChild("select-xaxis-var");
+        removeEveryChild("select-yaxis-var");
+        removeEveryChild("select-zaxis-var");
         addOptions("select-xaxis-var", Object.keys(data[0]),
             Object.keys(data[0]).map((elem, idx) => 'xaxis-var-option' + elem));
         addOptions("select-yaxis-var", Object.keys(data[0]),
@@ -62,10 +72,6 @@ window.onload = function() {
     let plotScatter3DButton = document.getElementById('plotScatter3DButton');
 
     plotScatter3DButton.addEventListener('click', function(evt) {
-
-        function clearDiv(containerId) {
-            document.getElementById(containerId).innerHTML = "";
-        }
 
         function get_plot_config() {
             return {'markerSize': +document.getElementById('select-marker-size').value,
