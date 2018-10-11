@@ -5,4 +5,4 @@ Plot in the browser scatter 3d plots from csv files.
 
 ## Known bugs:
 
-* Marker line width only distinguishes between zero and non-zero numbers
+* Marker line width only distinguishes between zero and non-zero numbers in Windows.
